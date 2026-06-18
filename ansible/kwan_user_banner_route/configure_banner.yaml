@@ -1,0 +1,23 @@
+---
+- name: CONFIGURE LOGIN BANNER
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: CONFIGURE BANNER
+      ios_config:
+        lines:
+          - banner motd ^AUTHORIZED ACCESS ONLY - CONFIGURED BY KWAN^
+
+    - name: VERIFY BANNER
+      ios_command:
+        commands:
+          - show running config | section banner
+      register: output
+
+    - name: SAVE BANNER OUTPUT
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "verification_outputs/banner_{{ inventory_hostname }}.txt"
+
