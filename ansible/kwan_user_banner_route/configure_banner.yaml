@@ -13,7 +13,7 @@
     - name: VERIFY BANNER
       ios_command:
         commands:
-          - show running config | section banner
+          - show running-config | section banner
       register: output
 
     - name: SAVE BANNER OUTPUT
