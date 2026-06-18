@@ -1,0 +1,19 @@
+---- name: CONFIGURE INTERFACE DESCRIPTION
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: SET DESCRIPTION ON GIGABITETHERNET2
+      ios_config:
+        parents: "interface GigabitEthernet2"
+        lines:
+          - description CONFIGURED BY MEMBER 2 USING ANSIBLE
+    - name: DISPLAY GIGABITETHERNET2 RUNNING CONFIG
+      ios_command:
+        commands:
+          - show running-config interface GigabitEthernet2
+      register: output
+    - name: SAVE INTERFACE CONFIGURATION OUTPUT
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "ios_configurations/interface_description_{{ inventory_hostname }}.txt
