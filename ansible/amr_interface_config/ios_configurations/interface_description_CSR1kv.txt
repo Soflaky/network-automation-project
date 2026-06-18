@@ -1,0 +1,4 @@
+interface Loopback10
+ description configured by amr using ansible
+ ip address 202.6.255.1 255.255.255.252
+end
