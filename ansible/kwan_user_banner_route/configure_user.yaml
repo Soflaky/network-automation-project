@@ -1,0 +1,23 @@
+---
+- name: CONFIGURE USER ACCOUNT
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: CREATE USER ACCOUNT
+      ios_config:
+        lines:
+          - username automation privilege 15 secret Cisco123!
+    
+    - name: VERIFY USER ACCOUNT 
+      ios_command:
+        commands:
+          - show running-config | include username
+      register: output
+
+    - name: SAVE USER OUTPUT 
+      copy :
+        content: "{{ output.stdout[0] }}"
+        dest: "verification_outputs/user_account_{{ inventory_hostname }}.txt"
+
