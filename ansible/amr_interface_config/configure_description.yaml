@@ -1,19 +1,23 @@
----- name: CONFIGURE INTERFACE DESCRIPTION
+---
+- name: CONFIGURE AMR INTERFACE DESCRIPTION
   hosts: CSR1kv
   gather_facts: false
   connection: local
+
   tasks:
-    - name: SET DESCRIPTION ON GIGABITETHERNET2
+    - name: CONFIGURE GIGABITETHERNET1 DESCRIPTION
       ios_config:
-        parents: "interface GigabitEthernet2"
+        parents: "interface GigabitEthernet1"
         lines:
-          - description CONFIGURED BY MEMBER 2 USING ANSIBLE
-    - name: DISPLAY GIGABITETHERNET2 RUNNING CONFIG
+          - description CONFIGURED BY AMR USING ANSIBLE
+
+    - name: SHOW INTERFACE RUNNING CONFIG
       ios_command:
         commands:
-          - show running-config interface GigabitEthernet2
+          - show running-config interface GigabitEthernet1
       register: output
-    - name: SAVE INTERFACE CONFIGURATION OUTPUT
+
+    - name: SAVE OUTPUT
       copy:
         content: "{{ output.stdout[0] }}"
-        dest: "ios_configurations/interface_description_{{ inventory_hostname }}.txt
+        dest: "ios_configurations/interface_description_CSR1kv.txt"

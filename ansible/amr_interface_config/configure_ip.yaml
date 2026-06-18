@@ -1,16 +1,18 @@
 ---
-- name: CONFIGURE AMR INTERFACE IP
+- name: CONFIGURE AMR LOOPBACK IP USING CLI COMMAND
   hosts: CSR1kv
   gather_facts: false
   connection: local
 
   tasks:
-    - name: CONFIGURE GIGABITETHERNET2 IP ADDRESS
-      ios_config:
-        parents: "interface GigabitEthernet2"
-        lines:
-          - ip address 202.6.255.1 255.255.255.252
-          - no shutdown
+    - name: ENTER CONFIGURATION COMMANDS
+      cli_command:
+        command: |
+          configure terminal
+          interface Loopback10
+          description CONFIGURED BY AMR USING ANSIBLE
+          ip address 202.6.255.1 255.255.255.252
+          end
 
     - name: SHOW IP INTERFACE BRIEF
       ios_command:
