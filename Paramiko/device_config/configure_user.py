@@ -10,8 +10,8 @@ def main():
         "show running-config | include username kwan"
     ]
 
-    run_device-commands(
-        conffig_commands=config_commands,
+    run_device_commands(
+        config_commands=config_commands,
         verify_commands=verify_commands,
         output_filename="user_config_output.txt"
     )
