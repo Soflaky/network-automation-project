@@ -36,7 +36,7 @@ def run_device_commands(config_commands, verify_commands, output_filename):
         
         ssh.connect(
             hostname=DEVICE["host"],
-            port=DEVICE["port"]
+            port=DEVICE["port"],
             username=DEVICE["username"],
             password=DEVICE["password"],
             look_for_keys=False,
