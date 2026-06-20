@@ -1,8 +1,8 @@
 from pathlib import Path
 import subprocess
 
-PROJECT ROOT = Path(__file__).resolve().parents[1]
-PLAYBOOK_DIR = PROJECT ROOT / "ansible" / "kwan_user_banner_route"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PLAYBOOK_DIR = PROJECT_ROOT / "ansible" / "kwan_user_banner_route"
 
 def main():
     subprocess.run(
