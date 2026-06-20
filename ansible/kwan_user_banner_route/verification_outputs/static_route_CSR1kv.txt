@@ -9,3 +9,5 @@ Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
        + - replicated route, % - next hop override, p - overrides from PfR
 
 Gateway of last resort is not set
+
+S     203.0.113.0/24 is directly connected, Null0
