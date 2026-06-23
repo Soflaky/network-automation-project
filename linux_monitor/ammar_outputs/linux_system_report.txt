@@ -1,0 +1,39 @@
+Linux System Information Report
+===============================
+Collected By: Ammar
+Date and Time: 2026-06-23 14:29:47
+
+Hostname
+--------
+labvm
+
+CPU Information
+---------------
+CPU Name: x86_64
+CPU Cores: 4
+CPU Usage: 0.5%
+
+Memory Usage
+------------
+Total Memory: 3.84 GB
+Used Memory: 0.55 GB
+Available Memory: 3.04 GB
+Memory Usage: 20.9%
+
+Disk Usage
+----------
+Total Disk: 30.14 GB
+Used Disk: 15.35 GB
+Free Disk: 13.24 GB
+
+Logged-in Users
+---------------
+devasc
+
+Top 5 Processes by CPU Usage
+----------------------------
+1. PID: 1 | Name: systemd | CPU: 0.0%
+2. PID: 2 | Name: kthreadd | CPU: 0.0%
+3. PID: 3 | Name: rcu_gp | CPU: 0.0%
+4. PID: 4 | Name: rcu_par_gp | CPU: 0.0%
+5. PID: 6 | Name: kworker/0:0H-kblockd | CPU: 0.0%
