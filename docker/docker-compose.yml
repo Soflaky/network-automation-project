@@ -1,0 +1,8 @@
+services:
+  ammar-linux-monitor:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: ammar-linux-monitor
+    volumes:
+      - ../linux_monitor/ammar_outputs:/app/ammar_outputs
