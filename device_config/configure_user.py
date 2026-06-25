@@ -1,14 +1,21 @@
-from pathlib import Path
-import subprocess
+from andy_ssh_helper import run_device_commands
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PLAYBOOK_DIR = PROJECT_ROOT / "ansible" / "kwan_user_banner_route"
 
 def main():
-    subprocess.run(
-        ["ansible-playbook", "configure_user.yaml"],
-        cwd=PLAYBOOK_DIR
+    config_commands = [
+        "username kwon privilege 15 password Kwon12345"
+    ]
+
+    verify_commands = [
+        "show running-config | include username kwon"
+    ]
+
+    run_device_commands(
+        config_commands=config_commands,
+        verify_commands=verify_commands,
+        output_filename="user_config_output.txt"
     )
+
 
 if __name__ == "__main__":
     main()

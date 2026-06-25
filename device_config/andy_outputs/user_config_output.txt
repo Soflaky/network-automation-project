@@ -1,0 +1,16 @@
+UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY ANDY
+
+
+CSR1kv#enable
+CSR1kv#terminal length 0
+CSR1kv#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR1kv(config)#username kwon privilege 15 password Kwon12345
+ WARNING: Command has been added to the configuration using a type 0 password. However, type 0 passwords will soon be deprecated. Migrate to a supported password type
+CSR1kv(config)#end
+CSR1kv#write memory
+Building configuration...
+[OK]
+CSR1kv#show running-config | include username kwon
+username kwon privilege 15 password 0 Kwon12345
+CSR1kv#

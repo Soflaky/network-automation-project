@@ -1,14 +1,22 @@
-from pathlib import Path
-import subprocess
+from andy_ssh_helper import run_device_commands
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PLAYBOOK_DIR = PROJECT_ROOT / "ansible" / "kwan_user_banner_route"
 
 def main():
-    subprocess.run(
-        ["ansible-playbook", "configure_route.yaml"],
-        cwd=PLAYBOOK_DIR
+    config_commands = [
+        "ip route 203.0.113.0 255.255.255.0 Null0"
+    ]
+
+    verify_commands = [
+        "show running-config | include ip route 203.0.113.0",
+        "show ip route static"
+    ]
+
+    run_device_commands(
+        config_commands=config_commands,
+        verify_commands=verify_commands,
+        output_filename="static_route_output.txt"
     )
+
 
 if __name__ == "__main__":
     main()

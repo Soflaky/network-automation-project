@@ -1,15 +1,21 @@
-from pathlib import Path
-import subprocess
+from andy_ssh_helper import run_device_commands
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PLAYBOOK_DIR = PROJECT_ROOT / "ansible" / "kwan_user_banner_route"
 
 def main():
-    subprocess.run(
-        ["ansible-playbook", "configure_banner.yaml"],
-        cwd=PLAYBOOK_DIR
+    config_commands = [
+        "banner motd #UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY ANDY#"
+    ]
+
+    verify_commands = [
+        "show running-config | include banner"
+    ]
+
+    run_device_commands(
+        config_commands=config_commands,
+        verify_commands=verify_commands,
+        output_filename="banner_config_output.txt"
     )
+
 
 if __name__ == "__main__":
     main()
-

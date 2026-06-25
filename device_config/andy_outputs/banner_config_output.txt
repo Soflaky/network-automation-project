@@ -1,0 +1,15 @@
+UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY ANDY
+
+
+CSR1kv#enable
+CSR1kv#terminal length 0
+CSR1kv#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR1kv(config)#banner motd #UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY AN$ #UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY AND         Y#
+CSR1kv(config)#end
+CSR1kv#write memory
+Building configuration...
+[OK]
+CSR1kv#show running-config | include banner
+banner motd ^CUNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY ANDY^C
+CSR1kv#
