@@ -1,0 +1,22 @@
+--- 
+- name: CONFIGURE STATIC ROUTE 
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: CONFIGURE STATIC ROUTE
+      ios_config:
+        lines:
+          - ip route 10.10.10.0 255.255.255.0 202.6.255.2
+    
+    - name: VERIFY STATIC ROUTE
+      ios_command:
+        commands:
+          - show ip route static
+      register: output
+
+    - name: SAVE ROUTE OUTPUT
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "verification_outputs/static_route_{{ inventory_hostname }}.txt"

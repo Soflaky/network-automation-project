@@ -1,0 +1,27 @@
+
+*                                           *
+**                                         **
+***                                       ***
+***  Cisco Networking Academy             ***
+***                                       ***
+***  This software is provided for        ***
+***   Educational Purposes                ***
+***    Only in Networking Academies       ***
+***                                       ***
+**                                         **
+*                                           *
+
+
+
+CSR1kv#enable
+CSR1kv#terminal length 0
+CSR1kv#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR1kv(config)#banner motd #UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY KW$ #UNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY KWA         N#
+CSR1kv(config)#end
+CSR1kv#write memory
+Building configuration...
+[OK]
+CSR1kv#show running-config | include banner
+banner motd ^CUNAUTHORIZED ACCESS PROHIBITED - CONFIGURED BY KWAN^C
+CSR1kv#
