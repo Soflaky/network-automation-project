@@ -1,0 +1,35 @@
+Linux System Information Report
+===============================
+Collected By: Ammar
+Date and Time: 2026-06-23 14:38:13
+
+Hostname
+--------
+20e572b004b3
+
+CPU Information
+---------------
+CPU Name: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+CPU Cores: 4
+CPU Usage: 0.3%
+
+Memory Usage
+------------
+Total Memory: 3.84 GB
+Used Memory: 0.98 GB
+Available Memory: 2.87 GB
+Memory Usage: 25.4%
+
+Disk Usage
+----------
+Total Disk: 30.14 GB
+Used Disk: 15.85 GB
+Free Disk: 12.74 GB
+
+Logged-in Users
+---------------
+No logged-in users detected
+
+Top 5 Processes by CPU Usage
+----------------------------
+1. PID: 1 | Name: python | CPU: 0.0%
