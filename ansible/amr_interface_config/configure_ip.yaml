@@ -1,0 +1,26 @@
+---
+- name: CONFIGURE AMR LOOPBACK IP USING CLI COMMAND
+  hosts: CSR1kv
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: ENTER CONFIGURATION COMMANDS
+      cli_command:
+        command: |
+          configure terminal
+          interface Loopback10
+          description CONFIGURED BY AMR USING ANSIBLE
+          ip address 202.6.255.1 255.255.255.252
+          end
+
+    - name: SHOW IP INTERFACE BRIEF
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: output
+
+    - name: SAVE OUTPUT
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "ios_configurations/ip_interface_summary_CSR1kv.txt"
