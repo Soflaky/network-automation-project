@@ -1,0 +1,310 @@
+Device Information Report
+=========================
+Collected By: Mohamed
+Date and Time: 2026-06-20 16:13:08.075145
+Device IP: 192.168.56.101
+
+
+============================================================
+Hostname
+============================================================
+Command Used: show running-config | include hostname
+
+show running-config | include hostname
+hostname CSR1kv
+CSR1kv#
+
+============================================================
+Device Version
+============================================================
+Command Used: show version
+
+show version
+Cisco IOS XE Software, Version 16.09.05
+Cisco IOS Software [Fuji], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.9.5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2020 by Cisco Systems, Inc.
+Compiled Thu 30-Jan-20 18:48 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2020 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+CSR1kv uptime is 1 hour, 35 minutes
+Uptime for this control processor is 1 hour, 36 minutes
+System returned to ROM by reload
+System image file is "bootflash:packages.conf"
+Last reload reason: reload
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: ax
+License Type: Default. No valid license found.
+Next reload license Level: ax
+
+
+Smart Licensing Status: Smart Licensing is DISABLED
+
+cisco CSR1000V (VXE) processor (revision VXE) with 2182252K/3075K bytes of memory.
+Processor board ID 9MGIQQ7IIKT
+1 Gigabit Ethernet interface
+32768K bytes of non-volatile configuration memory.
+3985032K bytes of physical memory.
+7774207K bytes of virtual hard disk at bootflash:.
+0K bytes of WebUI ODM Files at webui:.
+
+Configuration register is 0x2102
+
+CSR1kv#
+
+============================================================
+Interface Information
+============================================================
+Command Used: show ip interface brief
+
+show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       192.168.56.101  YES DHCP   up                    up      
+CSR1kv#
+
+============================================================
+Routing Table
+============================================================
+Command Used: show ip route
+
+show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      192.168.56.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.56.0/24 is directly connected, GigabitEthernet1
+L        192.168.56.101/32 is directly connected, GigabitEthernet1
+CSR1kv#
+
+============================================================
+Running Configuration
+============================================================
+Command Used: show running-config
+
+show running-config
+Building configuration...
+
+Current configuration : 3924 bytes
+!
+! Last configuration change at 14:37:54 UTC Sat Jun 20 2026
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname CSR1kv
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name example.netacad.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3009414516
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3009414516
+ revocation-check none
+ rsakeypair TP-self-signed-3009414516
+!
+!
+crypto pki certificate chain TP-self-signed-3009414516
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33303039 34313435 3136301E 170D3236 30363230 31343338 
+  31315A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 30303934 
+  31343531 36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100ACEC 9C55135C F558E088 30ABB17F 7A0D5B53 33EA1295 FE71AF0F 
+  29A1E578 0284C0D0 BD7C4ACA 6D54A5A0 42349B67 0604CE5D 77E3B9BF 82ABC111 
+  B7C4F786 E5197F79 1971B598 96DEA42C F43C7779 6FBACFFF 556F7BFD D48020E6 
+  2F95BC73 B9BE11F4 CB47917C 439D4146 31F7CE8B 9DBB4C44 E0033FDC 8E128ECC 
+  9035C347 5E31E4F6 C66E08FD 8AFAC507 5F521ED3 F601EB4D 8DFFCE0A 51EEBD26 
+  70D98C80 D787CE58 F35374A9 3D5377C1 EB0EB5B8 94591335 7E752B6A 942ED3F2 
+  E20711ED 5239F473 4D463952 88E3692D CD6DBFCE 117B270A CB1857E3 BD1784E4 
+  56A13BD8 D1DBB837 967C5BC2 61CC6F9A D42A44A4 3DE3DC70 F65F67CC 1E030D14 
+  9106A7E3 975D0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14E8B80D D60D27E9 639511C4 E42D6D33 D08EE42B 
+  38301D06 03551D0E 04160414 E8B80DD6 0D27E963 9511C4E4 2D6D33D0 8EE42B38 
+  300D0609 2A864886 F70D0101 05050003 82010100 69B94163 FC63889B 79ADE9FE 
+  595A810D 505FD743 13CC3267 9B00EF7A 548EF290 289888D9 047A8A6C 805976C0 
+  6C92540B 51E3461C 4CB391DE 60451EDE 256B2A40 208A2069 86A57EB7 595A586B 
+  7995E97D 27B9F79F 080B9295 F096A278 95F0D4FB A0EE7571 3562096F AD453D8A 
+  4F706515 54C715E1 F73955F5 D6077F56 68AFC38F 8B0B2D5A 1B839FB0 97AFBD9E 
+  73B17CA0 CCC7C8B5 4E42749F 233D3A9E 6AA0F9E1 ACACE8D2 86FFB98E 22436F31 
+  0252C551 DDE3856D 8C008E41 27C03B59 72BF9BEF 46029947 E4C0E958 88F23556 
+  FE5FDB76 763436C9 6E7513DC EB28E5C8 ED9FF4C8 CE03785F EF575CCB 9788B96E 
+  4CEC4B78 A1589F4F F50D6D5F 227E605E EDA71634
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9MGIQQ7IIKT
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+netconf-yang
+!
+restconf
+!
+username cisco privilege 15 password 0 cisco123!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ description VBox
+ ip address dhcp
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+banner motd ^C
+*                                           *
+**                                         **
+***                                       ***
+***  Cisco Networking Academy             ***
+***                                       ***
+***  This software is provided for        ***
+***   Educational Purposes                ***
+***    Only in Networking Academies       ***
+***                                       ***
+**                                         **
+*                                           *
+^C
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+!
+!
+end
+
+CSR1kv#
